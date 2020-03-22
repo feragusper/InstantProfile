@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name" translatable="false">Instant Profile</string>
+    <string name="mail_to" translatable="false">mailto: feragusper@gmail.com</string>
+</resources>

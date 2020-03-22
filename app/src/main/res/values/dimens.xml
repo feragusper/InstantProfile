@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="profile_avatar_diameter">110dp</dimen>
+    <dimen name="profileTextsMarginHorizontal">26dp</dimen>
+</resources>

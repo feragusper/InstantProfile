@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/profileFragment">
+
+    <fragment
+        android:id="@+id/projectListFragment"
+        android:name="com.feragusper.instantprofile.projects.view.ProjectListFragment"
+        tools:layout="@layout/fragment_project_list" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.feragusper.instantprofile.profile.view.ProfileFragment"
+        tools:layout="@layout/fragment_profile" />
+
+</navigation>

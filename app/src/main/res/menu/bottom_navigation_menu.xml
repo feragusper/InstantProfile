@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/whoAmI"
+        android:icon="@drawable/ic_f"
+        android:title="@string/who_am_i"
+        android:titleCondensed="string" />
+
+    <item
+        android:id="@+id/resume"
+        android:icon="@drawable/ic_f"
+        android:title="@string/resume"
+        android:titleCondensed="string" />
+
+    <item
+        android:id="@+id/projects"
+        android:icon="@drawable/ic_f"
+        android:title="@string/projects"
+        android:titleCondensed="string" />
+
+    <item
+        android:id="@+id/music"
+        android:icon="@drawable/ic_f"
+        android:title="@string/music"
+        android:titleCondensed="string" />
+</menu>

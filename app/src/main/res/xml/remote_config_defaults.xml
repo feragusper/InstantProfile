@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaultsMap>
+    <entry>
+        <key>projects</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>music</key>
+        <value>false</value>
+    </entry>
+    <entry>
+        <key>resume</key>
+        <value>false</value>
+    </entry>
+</defaultsMap>
