@@ -12,9 +12,13 @@ fun Fragment.goToSendMessage() {
 }
 
 fun Fragment.goToScheduleACall() {
+    goToUrl("https://calendly.com/feragusper")
+}
+
+fun Fragment.goToUrl(url: String) {
     val intent = Intent(
         Intent.ACTION_VIEW,
-        Uri.parse("https://calendly.com/feragusper")
+        Uri.parse(url)
     )
     startActivity(intent)
 }

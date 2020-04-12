@@ -5,13 +5,23 @@
     app:startDestination="@id/profileFragment">
 
     <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.feragusper.instantprofile.profile.view.ProfileFragment"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/resumeFragment"
+        android:name="com.feragusper.instantprofile.projects.view.ProjectListFragment"
+        tools:layout="@layout/fragment_project_list" />
+
+    <fragment
         android:id="@+id/projectListFragment"
         android:name="com.feragusper.instantprofile.projects.view.ProjectListFragment"
         tools:layout="@layout/fragment_project_list" />
 
     <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.feragusper.instantprofile.profile.view.ProfileFragment"
-        tools:layout="@layout/fragment_profile" />
+        android:id="@+id/musicFragment"
+        android:name="com.feragusper.instantprofile.projects.view.ProjectListFragment"
+        tools:layout="@layout/fragment_project_list" />
 
 </navigation>

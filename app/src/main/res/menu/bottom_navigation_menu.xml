@@ -1,24 +1,24 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/whoAmI"
+        android:id="@+id/profileFragment"
         android:icon="@drawable/ic_f"
         android:title="@string/who_am_i"
         android:titleCondensed="string" />
 
     <item
-        android:id="@+id/resume"
+        android:id="@+id/resumeFragment"
         android:icon="@drawable/ic_f"
         android:title="@string/resume"
         android:titleCondensed="string" />
 
     <item
-        android:id="@+id/projects"
-        android:icon="@drawable/ic_f"
+        android:id="@+id/projectListFragment"
+        android:icon="@drawable/ic_projects"
         android:title="@string/projects"
         android:titleCondensed="string" />
 
     <item
-        android:id="@+id/music"
+        android:id="@+id/musicFragment"
         android:icon="@drawable/ic_f"
         android:title="@string/music"
         android:titleCondensed="string" />

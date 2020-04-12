@@ -1,14 +1,13 @@
-package com.feragusper.instantprofile.commons.featureflag.provider
+package com.feragusper.instantprofile.commons.featureflag.configurations
 
 import com.feragusper.instantprofile.R
 import com.feragusper.instantprofile.commons.featureflag.Feature
-import com.feragusper.instantprofile.commons.featureflag.FeatureFlagProvider
-import com.feragusper.instantprofile.commons.featureflag.MAX_PRIORITY
-import com.feragusper.instantprofile.commons.featureflag.RemoteFeatureFlagProvider
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings
+import kotlin.coroutines.resume
+import kotlin.coroutines.suspendCoroutine
 
-class FirebaseFeatureFlagProvider(private val isDevModeEnabled: Boolean) : FeatureFlagProvider, RemoteFeatureFlagProvider {
+class FirebaseFeatureFlagConfigurations : FeatureFlagConfigurations, RemoteFeatureFlagConfigurations {
     private val remoteConfig: FirebaseRemoteConfig = FirebaseRemoteConfig.getInstance()
 
     init {
@@ -27,21 +26,9 @@ class FirebaseFeatureFlagProvider(private val isDevModeEnabled: Boolean) : Featu
         return true
     }
 
-    override fun refreshFeatureFlags() {
+    override suspend fun refreshFeatureFlags() = suspendCoroutine<Boolean> { cont ->
         remoteConfig.fetchAndActivate().addOnCompleteListener { task ->
-            if (task.isSuccessful) {
-            }
+            cont.resume(task.isSuccessful)
         }
-    }
-
-    private fun getCacheExpirationSeconds(isDevModeEnabled: Boolean): Long = if (isDevModeEnabled) {
-        CACHE_EXPIRATION_SECS_DEV
-    } else {
-        CACHE_EXPIRATION_SECS
-    }
-
-    companion object {
-        const val CACHE_EXPIRATION_SECS = 1 * 60 * 60L
-        const val CACHE_EXPIRATION_SECS_DEV = 1L
     }
 }

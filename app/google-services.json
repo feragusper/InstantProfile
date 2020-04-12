@@ -34,6 +34,35 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:385982231397:android:8b898d4bdfb166ac39678c",
+        "android_client_info": {
+          "package_name": "com.feragusper.instantprofile.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "385982231397-rel0fiklmlpt2t72k6tav0cnofv1df8r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6PqQdg0_Atoh16L1sGG0Qlb41b3lOY0c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "385982231397-rel0fiklmlpt2t72k6tav0cnofv1df8r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"

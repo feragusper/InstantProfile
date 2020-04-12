@@ -4,6 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.feragusper.instantprofile.commons.injection.qualifiers.ViewModelKey
 import com.feragusper.instantprofile.commons.viewmodel.ViewModelFactory
+import com.feragusper.instantprofile.profile.api.FirebaseDatabaseProfileApi
+import com.feragusper.instantprofile.profile.api.ProfileApi
 import com.feragusper.instantprofile.profile.interactor.FetchProfileUseCase
 import com.feragusper.instantprofile.profile.interactor.FetchProfileUseCaseImpl
 import com.feragusper.instantprofile.profile.repository.ProfileRepository
@@ -32,4 +34,7 @@ class ProfileModule {
 
     @Provides
     fun provideProfileRepository(repository: ProfileRepositoryImpl): ProfileRepository = repository
+
+    @Provides
+    fun provideProfileApi(): ProfileApi = FirebaseDatabaseProfileApi()
 }

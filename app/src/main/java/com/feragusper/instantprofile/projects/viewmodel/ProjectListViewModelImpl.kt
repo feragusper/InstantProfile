@@ -10,6 +10,7 @@ class ProjectListViewModelImpl @Inject constructor(
 ) : ProjectListViewModel() {
 
     override fun fetchAllProjects() {
+        setState(State.Loading)
         GlobalScope.launch {
             try {
                 val projectList = fetchProjectListUseCase.fetchAll()

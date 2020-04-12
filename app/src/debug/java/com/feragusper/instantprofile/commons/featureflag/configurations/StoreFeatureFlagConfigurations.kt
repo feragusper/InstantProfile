@@ -1,8 +1,10 @@
-package com.feragusper.instantprofile.commons.featureflag.provider
+package com.feragusper.instantprofile.commons.featureflag.configurations
 
-import com.feragusper.instantprofile.commons.featureflag.*
+import com.feragusper.instantprofile.commons.featureflag.Feature
+import com.feragusper.instantprofile.commons.featureflag.FeatureFlag
+import com.feragusper.instantprofile.commons.featureflag.TestSetting
 
-class StoreFeatureFlagProvider : FeatureFlagProvider {
+class StoreFeatureFlagConfigurations : FeatureFlagConfigurations {
 
     override val priority = MIN_PRIORITY
 

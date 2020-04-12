@@ -1,47 +1,36 @@
 package com.feragusper.instantprofile.main.view
 
 import android.os.Bundle
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
 import com.feragusper.instantprofile.R
 import com.feragusper.instantprofile.commons.featureflag.FeatureFlag
-import com.feragusper.instantprofile.commons.featureflag.RuntimeBehavior
+import com.feragusper.instantprofile.commons.featureflag.FeatureFlagManager
 import dagger.android.support.DaggerAppCompatActivity
-import kotlinx.android.synthetic.main.activity_profile.*
+import kotlinx.android.synthetic.main.activity_main.*
+import javax.inject.Inject
 
 class MainActivity : DaggerAppCompatActivity() {
+
+    @Inject
+    lateinit var featureFlagManager: FeatureFlagManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_profile)
+        setContentView(R.layout.activity_main)
 
-        val bottomNavigationMenu = bottom_navigation.menu
-        if (!RuntimeBehavior.isFeatureEnabled(FeatureFlag.PROJECTS)) {
-            bottomNavigationMenu.removeItem(R.id.projects)
+        val bottomNavigatioMmenu = bottomNavigationView.menu
+        if (!featureFlagManager.isFeatureEnabled(FeatureFlag.PROJECTS)) {
+            bottomNavigatioMmenu.removeItem(R.id.projectListFragment)
         }
-        if (!RuntimeBehavior.isFeatureEnabled(FeatureFlag.RESUME)) {
-            bottomNavigationMenu.removeItem(R.id.resume)
+        if (!featureFlagManager.isFeatureEnabled(FeatureFlag.RESUME)) {
+            bottomNavigatioMmenu.removeItem(R.id.resumeFragment)
         }
-        if (!RuntimeBehavior.isFeatureEnabled(FeatureFlag.MUSIC)) {
-            bottomNavigationMenu.removeItem(R.id.music)
+        if (!featureFlagManager.isFeatureEnabled(FeatureFlag.MUSIC)) {
+            bottomNavigatioMmenu.removeItem(R.id.musicFragment)
         }
 
-//        val remoteConfig: FirebaseRemoteConfig = FirebaseRemoteConfig.getInstance()
-//        remoteConfig.fetchAndActivate()
-//            .addOnCompleteListener(this) { task ->
-//                if (task.isSuccessful) {
-//                    val bottomNavigationMenu = bottom_navigation.menu
-//                    if (!RuntimeBehavior.isFeatureEnabled(FeatureFlag.PROJECTS)) {
-//                        bottomNavigationMenu.removeItem(R.id.projects)
-//                    }
-//                    if (!RuntimeBehavior.isFeatureEnabled(FeatureFlag.RESUME)) {
-//                        bottomNavigationMenu.removeItem(R.id.resume)
-//                    }
-//                    if (!RuntimeBehavior.isFeatureEnabled(FeatureFlag.MUSIC)) {
-//                        bottomNavigationMenu.removeItem(R.id.music)
-//                    }
-//                } else {
-//                    Timber.e(firebase)
-//                }
-//            }
+        NavigationUI.setupWithNavController(bottomNavigationView, (supportFragmentManager.findFragmentById(R.id.fragNavHost) as NavHostFragment).navController)
     }
 }

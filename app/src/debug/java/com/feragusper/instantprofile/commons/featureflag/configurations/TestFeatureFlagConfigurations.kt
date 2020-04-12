@@ -1,14 +1,12 @@
-package com.feragusper.instantprofile.commons.featureflag.provider
+package com.feragusper.instantprofile.commons.featureflag.configurations
 
 import com.feragusper.instantprofile.commons.featureflag.Feature
-import com.feragusper.instantprofile.commons.featureflag.FeatureFlagProvider
-import com.feragusper.instantprofile.commons.featureflag.TEST_PRIORITY
 
 /**
  * For use during unit/instrumentation tests, allows to dynamically enable/disable features
  * during automated tests
  */
-object TestFeatureFlagProvider : FeatureFlagProvider {
+object TestFeatureFlagConfigurations : FeatureFlagConfigurations {
 
     private val features = HashMap<Feature, Boolean>()
 

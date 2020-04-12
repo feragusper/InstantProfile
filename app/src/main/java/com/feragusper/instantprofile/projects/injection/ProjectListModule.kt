@@ -4,6 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.feragusper.instantprofile.commons.injection.qualifiers.ViewModelKey
 import com.feragusper.instantprofile.commons.viewmodel.ViewModelFactory
+import com.feragusper.instantprofile.projects.api.FirebaseDatabaseProjectApi
+import com.feragusper.instantprofile.projects.api.ProjectApi
 import com.feragusper.instantprofile.projects.interactor.FetchProjectListUseCase
 import com.feragusper.instantprofile.projects.interactor.FetchProjectListUseCaseImpl
 import com.feragusper.instantprofile.projects.repository.ProjectRepository
@@ -32,4 +34,7 @@ class ProjectListModule {
 
     @Provides
     fun provideProjectRepository(repository: ProjectRepositoryImpl): ProjectRepository = repository
+
+    @Provides
+    fun provideProjectApi(): ProjectApi = FirebaseDatabaseProjectApi()
 }

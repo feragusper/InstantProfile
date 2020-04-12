@@ -51,5 +51,5 @@ enum class TestSetting(
     DEBUG_LOGGING("testsetting.debuglogging", "Enable logging", "Print all app logging to console", defaultValue = true),
     STRICT_MODE("testsetting.strictmode", "Enable strict mode", "Detect IO operations accidentally performed on the main Thread", defaultValue = true),
     CRASH_APP("testsetting.crashapp", "Crash app", "Force java crash next app startup"),
-    DEBUG_FIREBASE("testsetting.debugfirebase", "Enable Firebase remote config (DEBUG Builds)", "Enable reading feature flag from Firebase on debug builds", true)
+    DEBUG_FIREBASE("testsetting.debugfirebase", "Enable Firebase remote config (DEBUG Builds)", "Enable reading feature flag from Firebase on debug builds", false)
 }

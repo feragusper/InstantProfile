@@ -2,7 +2,7 @@
 <defaultsMap>
     <entry>
         <key>projects</key>
-        <value>false</value>
+        <value>true</value>
     </entry>
     <entry>
         <key>music</key>

@@ -13,8 +13,8 @@ android {
         applicationId = "com.feragusper.instantprofile"
         minSdkVersion(26)
         targetSdkVersion(29)
-        versionCode = 5
-        versionName = "1.4"
+        versionCode = 4
+        versionName = "1.3"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -27,6 +27,10 @@ android {
                 "proguard-rules.pro"
             )
         }
+
+        getByName("debug") {
+            applicationIdSuffix = ".debug"
+        }
     }
 
 }
@@ -34,10 +38,10 @@ android {
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.70")
 
-    implementation("com.google.firebase:firebase-analytics:17.2.3")
+    implementation("com.google.firebase:firebase-analytics:17.3.0")
     implementation("com.google.firebase:firebase-database:19.2.1")
-    implementation("com.google.firebase:firebase-core:17.2.3")
-    implementation("com.google.firebase:firebase-config:19.1.2")
+    implementation("com.google.firebase:firebase-core:17.3.0")
+    implementation("com.google.firebase:firebase-config:19.1.3")
     implementation("com.google.firebase:firebase-storage:19.1.1")
 
     implementation("com.firebaseui:firebase-ui-storage:4.3.2")
@@ -52,20 +56,20 @@ dependencies {
 
     implementation("androidx.constraintlayout:constraintlayout:1.1.3")
 
-    val dagger_version = "2.16"
-    implementation("com.google.dagger:dagger:$dagger_version")
-    kapt("com.google.dagger:dagger-compiler:$dagger_version")
-    implementation("com.google.dagger:dagger-android:$dagger_version")
-    implementation("com.google.dagger:dagger-android-support:$dagger_version")
-    kapt("com.google.dagger:dagger-android-processor:$dagger_version")
+    val daggerVersion = "2.16"
+    implementation("com.google.dagger:dagger:$daggerVersion")
+    kapt("com.google.dagger:dagger-compiler:$daggerVersion")
+    implementation("com.google.dagger:dagger-android:$daggerVersion")
+    implementation("com.google.dagger:dagger-android-support:$daggerVersion")
+    kapt("com.google.dagger:dagger-android-processor:$daggerVersion")
 
-    val nav_version = "2.1.0"
-    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
-    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+    val navigationVersion = "2.2.1"
+    implementation("androidx.navigation:navigation-fragment-ktx:$navigationVersion")
+    implementation("androidx.navigation:navigation-ui-ktx:$navigationVersion")
 
-    val glide_version = "4.11.0"
-    implementation("com.github.bumptech.glide:glide:$glide_version")
-    kapt("com.github.bumptech.glide:compiler:$glide_version")
+    val glideVersion = "4.11.0"
+    implementation("com.github.bumptech.glide:glide:$glideVersion")
+    kapt("com.github.bumptech.glide:compiler:$glideVersion")
 
     implementation("com.faltenreich:skeletonlayout:2.0.1")
 

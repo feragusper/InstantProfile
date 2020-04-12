@@ -1,13 +1,11 @@
-package com.feragusper.instantprofile.commons.featureflag.provider
+package com.feragusper.instantprofile.commons.featureflag.configurations
 
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.annotation.VisibleForTesting
 import com.feragusper.instantprofile.commons.featureflag.Feature
-import com.feragusper.instantprofile.commons.featureflag.FeatureFlagProvider
-import com.feragusper.instantprofile.commons.featureflag.MEDIUM_PRIORITY
 
-class RuntimeFeatureFlagProvider : FeatureFlagProvider {
+class RuntimeFeatureFlagConfigurations : FeatureFlagConfigurations {
 
     private val preferences: SharedPreferences
 
@@ -22,8 +20,7 @@ class RuntimeFeatureFlagProvider : FeatureFlagProvider {
         preferences = prefs
     }
 
-    override fun isFeatureEnabled(feature: Feature): Boolean =
-        preferences.getBoolean(feature.key, feature.defaultValue)
+    override fun isFeatureEnabled(feature: Feature): Boolean = preferences.getBoolean(feature.key, feature.defaultValue)
 
     override fun hasFeature(feature: Feature): Boolean = true
 

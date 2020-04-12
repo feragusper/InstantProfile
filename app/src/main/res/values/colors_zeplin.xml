@@ -6,6 +6,8 @@
     <color name="dark_green">#128532</color>
     <color name="green">#3bd165</color>
     <color name="brownish_grey">#666666</color>
+    <color name="brownish_grey_dark">#232323</color>
+    <color name="white_three">#CCCCCC</color>
     <color name="white_two">#f8f8f8</color>
     <color name="black_50">#80000000</color>
 </resources>

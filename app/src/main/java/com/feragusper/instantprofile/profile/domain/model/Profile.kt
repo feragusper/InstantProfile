@@ -4,5 +4,5 @@ data class Profile(
     val name: String,
     val role: String,
     val resume: String,
-    val avatarImageUrl: String
+    val avatarImageFirebaseStorageUrl: String
 )

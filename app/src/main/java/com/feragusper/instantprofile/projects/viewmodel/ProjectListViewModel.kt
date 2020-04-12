@@ -5,6 +5,7 @@ import com.feragusper.instantprofile.projects.domain.model.Project
 
 abstract class ProjectListViewModel : BaseViewModel<ProjectListViewModel.State>() {
     sealed class State {
+        object Loading : State()
         data class Success(val projectList: List<Project>) : State()
         data class Error(val message: String) : State()
     }
